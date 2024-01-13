@@ -5,3 +5,15 @@ $theme-colors: (
 
 /* import bootstrap to set changes */
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #202020;
+}
+
+
+@media (min-width: 992px) {
+  .col-lg-2 {
+      flex: 0 0 auto;
+      width: 20%;
+  }
+}
