@@ -18,7 +18,7 @@ const CustomCard = ({
 }: CardProps) => {
 
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '100%' }}>
             <Card.Body>
                 <Card.Title>{heading}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{subheading}</Card.Subtitle>
