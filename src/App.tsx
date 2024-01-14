@@ -5,7 +5,11 @@ import { Container, Row, Col}  from 'react-bootstrap';
 import Data from './UIE-InterviewProject.json';
 
 function App() {
-  console.log(Data);
+
+  const formatPrice = (price: number): string => {
+    return price.toLocaleString('en', {useGrouping:true});
+  }
+
   return (
     <Container className="App">
       <div className='d-flex justify-content-center'>
@@ -17,12 +21,13 @@ function App() {
                 <CustomCard
                   heading={item.Heading}
                   subheading={item.Subheading}
-                  price={item.Price}
+                  price={formatPrice(item.Price)}
+                  showBridge={item.showBridge}
                 />
               </Col>
             )
           })
-          }
+        }
       </Row>
       </div>
     </Container>
