@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/App.scss';
 import CustomCard from './components/CustomCard';
 import { Container, Row, Col}  from 'react-bootstrap';
@@ -8,7 +7,7 @@ function App() {
 
   const formatPrice = (price: number): string => {
     return price.toLocaleString('en', {useGrouping:true});
-  }
+  };
 
   return (
     <Container className="App">
