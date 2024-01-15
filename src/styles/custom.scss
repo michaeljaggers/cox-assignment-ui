@@ -4,64 +4,86 @@ body {
   background-color: #202020;
 }
 
-.card {
-  width: 100%;
-  height:  300px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px #888;
-  border-width: 0;;
-
-  .card-header {
-      height: 150px;
-      border-radius: 10px 10px 0 0;
-      &.placeholder {
-        background-size: contain;
-        background-repeat: repeat;
-        opacity: 1;
-      }
-      &.bridge {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: -150px 0px;
-      }
-      img {
-        width: 100%;
-        max-width: 150px;
-        background-color: #FFF;
-        opacity: 1;
-        border-radius: 10px;
-      }
-      .placeholder {
-        width: 80%;
-      }
-      .bridge {
-        width: 100%;
-        justify-self: flex-start;
-        align-self: flex-start;
-      }
+.App {
+  position: relative;
+  .button-container {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    button {
+      margin-right: 15px;
+    }
   }
-  .card-body {
-    height: 150px;
-    position: relative;
-    .card-title {
-      font-size: 1rem;
-      text-transform: capitalize;
+  .card {
+    width: 100%;
+    height:  300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #888;
+    border-width: 0;
+    .card-header {
+        height: 150px;
+        border-radius: 10px 10px 0 0;
+        &.placeholder {
+          background-size: contain;
+          background-repeat: repeat;
+          opacity: 1;
+        }
+        &.bridge {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: -150px 0px;
+        }
+        img {
+          width: 100%;
+          max-width: 150px;
+          background-color: #FFF;
+          opacity: 1;
+          border-radius: 10px;
+        }
+        .placeholder {
+          width: 80%;
+        }
+        .bridge {
+          width: 100%;
+          justify-self: flex-start;
+          align-self: flex-start;
+        }
     }
-    .card-text {
-      font-size: .9rem;
-      text-transform: capitalize;
+    .card-body {
+      height: 150px;
+      position: relative;
+      .card-title {
+        font-size: 1rem;
+        text-transform: capitalize;
+      }
+      .card-text {
+        font-size: .9rem;
+        text-transform: capitalize;
+      }
+      .card-price {
+        width: calc(100% - 30px);
+        position: absolute;
+        bottom: 10px;
+        border-top: 2px solid #e5e5e5;
+        span {
+          color: #25b76f;
+          font-weight: bold;
+          &::before {
+            content: "$";
+          }
+        }
+      }
     }
-    .card-price {
-      width: calc(100% - 30px);
-      position: absolute;
-      bottom: 10px;
-      border-top: 2px solid #e5e5e5;
-      span {
-        color: #25b76f;
-        font-weight: bold;
-        &::before {
-          content: "$";
+  }
+}
+
+@media (max-width: 576px) {
+  .App {
+    .card {
+      .card-header {
+        &.bridge {
+          background-position: 0 0;
         }
       }
     }
@@ -72,13 +94,5 @@ body {
   .col-lg-2 {
       flex: 0 0 auto;
       width: 20%;
-  }
-}
-
-@media (max-width: 576px) {
-  .card-header {
-    &.bridge {
-      background-position: 0 0;
-    }
   }
 }
